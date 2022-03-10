@@ -305,7 +305,10 @@
 
 #endif
 
-#if defined(_LINUX) || defined(__linux__)
+#if defined(_TOS) || defined(__linux__)
+#include "actos.h"
+
+#elif defined(_LINUX) || defined(__linux__)
 #include "aclinux.h"
 
 #elif defined(_APPLE) || defined(__APPLE__)
