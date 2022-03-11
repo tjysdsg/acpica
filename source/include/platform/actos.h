@@ -163,6 +163,7 @@
 #define INT64 int64_t
 #define UINT64 uint64_t
 #define BITS_PER_LONG 32
+#define BOOLEAN int
 /// ==================================================================
 
 /* Common (in-kernel/user-space) ACPICA configuration */
@@ -205,7 +206,7 @@
 #include <asm/acenv.h>
 #endif
 
-#define ACPI_INIT_FUNCTION __init
+#define ACPI_INIT_FUNCTION
 
 /* Use a specific bugging default separate from ACPICA */
 
@@ -227,19 +228,6 @@
 
 #define ACPI_NO_ERROR_MESSAGES
 #undef ACPI_DEBUG_OUTPUT
-
-/* External interface for __KERNEL__, stub is needed */
-
-#define ACPI_EXTERNAL_RETURN_STATUS(Prototype) \
-    static ACPI_INLINE Prototype {return(AE_NOT_CONFIGURED);}
-#define ACPI_EXTERNAL_RETURN_OK(Prototype) \
-    static ACPI_INLINE Prototype {return(AE_OK);}
-#define ACPI_EXTERNAL_RETURN_VOID(Prototype) \
-    static ACPI_INLINE Prototype {return;}
-#define ACPI_EXTERNAL_RETURN_UINT32(Prototype) \
-    static ACPI_INLINE Prototype {return(0);}
-#define ACPI_EXTERNAL_RETURN_PTR(Prototype) \
-    static ACPI_INLINE Prototype {return(NULL);}
 
 #endif /* CONFIG_ACPI */
 
