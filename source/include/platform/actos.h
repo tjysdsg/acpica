@@ -164,8 +164,6 @@
 #define UINT64 uint64_t
 #define BITS_PER_LONG 32
 #define BOOLEAN int
-
-#define DEFINE_ACPI_GLOBALS
 /// ==================================================================
 
 /* Common (in-kernel/user-space) ACPICA configuration */
