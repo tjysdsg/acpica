@@ -149,8 +149,8 @@
  *
  *****************************************************************************/
 
-#ifndef __ACLINUX_H__
-#define __ACLINUX_H__
+#ifndef __ACTOS_H__
+#define __ACTOS_H__
 
 /// ======================= tos custom options =======================
 #include <stdint.h>
@@ -172,7 +172,6 @@
 
 #define ACPI_USE_SYSTEM_CLIBRARY
 #define ACPI_USE_DO_WHILE_0
-#define ACPI_IGNORE_PACKAGE_RESOLUTION_ERRORS
 
 #ifdef __KERNEL__
 
@@ -209,15 +208,15 @@
 
 /* Use a specific bugging default separate from ACPICA */
 
-#undef ACPI_DEBUG_DEFAULT
-#define ACPI_DEBUG_DEFAULT          (ACPI_LV_INFO | ACPI_LV_REPAIR)
+// #undef ACPI_DEBUG_DEFAULT
+// #define ACPI_DEBUG_DEFAULT          (ACPI_LV_INFO | ACPI_LV_REPAIR)
 
 #ifndef CONFIG_ACPI
 
 /* External globals for __KERNEL__, stubs is needed */
 
-#define ACPI_GLOBAL(t, a)
-#define ACPI_INIT_GLOBAL(t, a, b)
+// #define ACPI_GLOBAL(t, a)
+// #define ACPI_INIT_GLOBAL(t, a, b)
 
 /* Generating stubs for configurable ACPICA macros */
 
@@ -234,10 +233,10 @@
 
 #define ACPI_MACHINE_WIDTH          BITS_PER_LONG
 #define ACPI_USE_NATIVE_MATH64
-#define ACPI_EXPORT_SYMBOL(symbol)  EXPORT_SYMBOL(symbol);
+#define ACPI_EXPORT_SYMBOL(symbol)
 #define strtoul                     simple_strtoul
 
-#define ACPI_CACHE_T                struct kmem_cache
+#define ACPI_CACHE_T                ACPI_MEMORY_LIST
 #define ACPI_SPINLOCK               spinlock_t *
 #define ACPI_CPU_FLAGS              unsigned long
 
@@ -337,4 +336,4 @@
 
 #endif /* __KERNEL__ */
 
-#endif /* __ACLINUX_H__ */
+#endif /* __ACTOS_H__ */
