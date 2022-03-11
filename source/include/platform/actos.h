@@ -164,6 +164,8 @@
 #define UINT64 uint64_t
 #define BITS_PER_LONG 32
 #define BOOLEAN int
+
+#define DEFINE_ACPI_GLOBALS
 /// ==================================================================
 
 /* Common (in-kernel/user-space) ACPICA configuration */
@@ -192,16 +194,13 @@
 #endif
 
 #include <string.h>
-// #include <kernel.h>
-// #include <ctype.h>
-// #include <sched.h>
-// #include <atomic.h>
-// #include <math64.h>
-// #include <slab.h>
-// #include <spinlock_types.h>
-#ifdef EXPORT_ACPI_INTERFACES
-#include <linux/export.h>
-#endif
+#include <kernel.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <sched.h>
+#include <atomic.h>
+#include <spinlock_types.h>
+
 #ifdef CONFIG_ACPI
 #include <asm/acenv.h>
 #endif
@@ -282,13 +281,13 @@
 #define ACPI_USE_ALTERNATE_PROTOTYPE_AcpiOsGetNextFilename
 #define ACPI_USE_ALTERNATE_PROTOTYPE_AcpiOsCloseDirectory
 
-#define ACPI_MSG_ERROR          KERN_ERR "ACPI Error: "
-#define ACPI_MSG_EXCEPTION      KERN_ERR "ACPI Exception: "
-#define ACPI_MSG_WARNING        KERN_WARNING "ACPI Warning: "
-#define ACPI_MSG_INFO           KERN_INFO "ACPI: "
+#define ACPI_MSG_ERROR          "ACPI Error: "
+#define ACPI_MSG_EXCEPTION      "ACPI Exception: "
+#define ACPI_MSG_WARNING        "ACPI Warning: "
+#define ACPI_MSG_INFO           "ACPI: "
 
-#define ACPI_MSG_BIOS_ERROR     KERN_ERR "ACPI BIOS Error (bug): "
-#define ACPI_MSG_BIOS_WARNING   KERN_WARNING "ACPI BIOS Warning (bug): "
+#define ACPI_MSG_BIOS_ERROR     "ACPI BIOS Error (bug): "
+#define ACPI_MSG_BIOS_WARNING   "ACPI BIOS Warning (bug): "
 
 /*
  * Linux wants to use designated initializers for function pointer structs.
