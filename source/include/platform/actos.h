@@ -164,6 +164,8 @@
 #define UINT64 uint64_t
 #define BITS_PER_LONG 32
 #define BOOLEAN int
+
+#define ACPI_USE_NATIVE_DIVIDE
 /// ==================================================================
 
 /* Common (in-kernel/user-space) ACPICA configuration */
