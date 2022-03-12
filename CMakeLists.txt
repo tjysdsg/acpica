@@ -1,4 +1,3 @@
-
 aux_source_directory(source/components/dispatcher ACPICA_SRCS)
 aux_source_directory(source/components/events ACPICA_SRCS)
 aux_source_directory(source/components/executer ACPICA_SRCS)
@@ -17,7 +16,7 @@ target_compile_options(
         acpica
         PRIVATE -ffreestanding -Wall -fno-exceptions
 )
-target_include_directories(acpica PUBLIC source/include source/compiler)
+target_include_directories(acpica PUBLIC source/include)
 target_compile_definitions(acpica PUBLIC _TOS __KERNEL__)
 
 if (NOT TARGET c)
