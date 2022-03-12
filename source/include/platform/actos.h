@@ -57,12 +57,6 @@
 
 #ifndef CONFIG_ACPI
 
-/* Generating stubs for configurable ACPICA macros */
-
-#define ACPI_NO_MEM_ALLOCATIONS
-
-/* Generating stubs for configurable ACPICA functions */
-
 #define ACPI_NO_ERROR_MESSAGES
 #undef ACPI_DEBUG_OUTPUT
 
