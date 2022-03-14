@@ -57,9 +57,6 @@
 
 #ifndef CONFIG_ACPI
 
-#define ACPI_NO_ERROR_MESSAGES
-#undef ACPI_DEBUG_OUTPUT
-
 #endif /* CONFIG_ACPI */
 
 /* Host-dependent types and defines for in-kernel ACPICA */
